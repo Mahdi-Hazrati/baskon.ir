@@ -14,12 +14,7 @@ function showBaskonDetail(item) {
   `;
   loadGiscus();
 }
-
-function loadGiscus() {
-  const giscus = document.querySelector("script[src*='giscus.app']");
-  if (giscus) giscus.remove();
-
-  const giscusContainer = document.getElementById("giscus-container");
+function loadGiscus() { const giscus = document.querySelector("script[src*='giscus.app']"); if (giscus) giscus.remove(); const giscusContainer = document.getElementById("giscus-container"); const slug = window.location.hash.slice(1) || "home"; const newScript = document.createElement("script"); newScript.src = "https://giscus.app/client.js"; newScript.setAttribute("data-repo", "Mahdi-Hazrati/baskon.ir"); newScript.setAttribute("data-repo-id", "R_kgDOOhNjpw"); newScript.setAttribute("data-category", "General"); newScript.setAttribute("data-category-id", "DIC_kwDOOhNjp84Cpjyv"); newScript.setAttribute("data-mapping", "specific"); newScript.setAttribute("data-term", slug); // This line is key newScript.setAttribute("data-theme", "noborder_light"); newScript.setAttribute("data-lang", "fa"); newScript.async = true; newScript.crossOrigin = "anonymous"; giscusContainer.innerHTML = ""; giscusContainer.appendChild(newScript); } 
   const newScript = document.createElement("script");
   newScript.src = "https://giscus.app/client.js";
   newScript.setAttribute("data-repo", "Mahdi-Hazrati/baskon.ir");
